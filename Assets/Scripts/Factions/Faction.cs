@@ -10,8 +10,8 @@ public enum Nation
     Pirates,
     France,
     Spain,
-    Portuguese,
-    Dutch
+    Portugal,
+    Netherland
 } 
 public class Faction : MonoBehaviour
 {
@@ -30,15 +30,4 @@ public class Faction : MonoBehaviour
     public int Stone { get { return stone; } set { stone = value; } }
 
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
