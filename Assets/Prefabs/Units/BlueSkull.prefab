@@ -2827,9 +2827,9 @@ GameObject:
   - component: {fileID: -928107137872229191}
   - component: {fileID: 738550722972111207}
   - component: {fileID: 585973363883203232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlueSkull
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   weaponRange: 0
   state: 0
   faction: {fileID: 0}
-  selectionVisual: {fileID: 0}
+  selectionVisual: {fileID: 7510016851803281026, guid: 1f7cc050f663bd9489bd8e48c8e3fbb5, type: 3}
   unitCost:
     food: 50
     wood: 20

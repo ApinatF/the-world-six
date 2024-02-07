@@ -30,7 +30,7 @@ public class Building : Structure
         {
             ToCreateUnit(0);
         }
-        else if (Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKeyDown(KeyCode.H))
         {
             ToCreateUnit(1);
         }
