@@ -51,6 +51,10 @@ MonoBehaviour:
   wood: 0
   gold: 0
   stone: 0
+  aliveUnits: []
+  aliveBuildings:
+  - {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+  - {fileID: 6727633918175250301, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
 --- !u!114 &296246741266825138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +71,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   curUnit: {fileID: 0}
+  curBuilding: {fileID: 0}
 --- !u!114 &8601346177433362774
 MonoBehaviour:
   m_ObjectHideFlags: 0
