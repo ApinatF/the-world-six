@@ -11,6 +11,7 @@ public class Building : Structure
     public Transform RallyPoint { get { return rallyPoint; } }
 
     [SerializeField] private GameObject[] unitPrefabs;
+    public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
 
     [SerializeField] private List<Unit> recruitList = new List<Unit>();
 
@@ -18,7 +19,12 @@ public class Building : Structure
     [SerializeField] private int curUnitProgress = 0;
 
     [SerializeField] private float curUnitWaitTime = 0f;
-    
+    [SerializeField] private bool isFunctional;
+    public bool IsFunctional
+    {
+        get { return isFunctional; }
+        set { isFunctional = value; }
+    }
     void Start()
     {
         curHP = maxHP;
