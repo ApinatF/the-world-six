@@ -100,6 +100,7 @@ public class ActionManager : MonoBehaviour
     {
         //Debug.Log("1 - Click Button: " + n);
     }
+    
 
 
 

@@ -8,6 +8,7 @@ TagManager:
   - Building
   - Ground
   - Resource
+  - GhostBuilding
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Building
   - Ground
   - Resource
-  - 
+  - Ignore Raycast
   - 
   - 
   - 

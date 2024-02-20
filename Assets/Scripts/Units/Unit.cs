@@ -62,11 +62,9 @@ public class Unit : MonoBehaviour
     public NavMeshAgent NavAgent { get { return navAgent; } }
 
     [SerializeField] private Faction faction;
-    public Faction Faction
-    {
-        get { return faction;}
-        set { faction = value; }
-    }
+    public Faction Faction { get { return faction;} set { faction = value; } }
+    
+    
 
     [SerializeField] private GameObject selectionVisual;
     public GameObject SelectionVisual { get { return selectionVisual; } }
