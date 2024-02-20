@@ -80,5 +80,4 @@ public class InfoManager : MonoBehaviour
         hpIcon.color = Color.white;
         hpTxt.text = $"{building.CurHP}/{building.MaxHP}";
     }
-    
 }
