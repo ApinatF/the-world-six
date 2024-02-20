@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Builder : MonoBehaviour
 {
@@ -37,6 +38,14 @@ public class Builder : MonoBehaviour
         if (toBuild) // if this unit is to build something
         {
             GhostBuildingFollowsMouse();
+
+            if (Input.GetMouseButtonDown(0)) // Click to select a building site
+            {
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
+                
+                CheckClickOnGround();
+            }
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
                 CancelToBuild();
@@ -122,8 +131,7 @@ public class Builder : MonoBehaviour
         Building building = buildingObj.GetComponent<Building>();
 
         //Set building to be underground
-        buildingObj.transform.position = new Vector3(buildingObj.transform.position.x,
-            buildingObj.transform.position.y - building.IntoTheGround,
+        buildingObj.transform.position = new Vector3(buildingObj.transform.position.x, buildingObj.transform.position.y - building.IntoTheGround,
             buildingObj.transform.position.z);
         //Set building's parent game object
         buildingObj.transform.parent = unit.Faction.BuildingsParent.transform;
