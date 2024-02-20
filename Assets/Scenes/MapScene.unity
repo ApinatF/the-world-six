@@ -3004,7 +3004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4306104616990552168, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4306104616990552168, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3049,6 +3049,10 @@ PrefabInstance:
     - target: {fileID: 6727633918175250301, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
       propertyPath: isFunctional
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727633918175250301, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
+      propertyPath: curUnitProgress
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4530,8 +4534,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 720310387}
     - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+      propertyPath: unitTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
       propertyPath: isFunctional
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+      propertyPath: intoTheGround
+      value: -0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+      propertyPath: curUnitProgress
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+      propertyPath: curUnitWaitTime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
       propertyPath: unitPrefabs.Array.size
@@ -4555,7 +4575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7845978888214070423, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 7845978888214070423, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8449,9 +8469,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2068541188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

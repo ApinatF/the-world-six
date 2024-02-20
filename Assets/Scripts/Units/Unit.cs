@@ -142,6 +142,14 @@ public class Unit : MonoBehaviour
     //time for increasing progress 1% for this unit, less is faster
     [SerializeField] private float unitWaitTime = 0.1f;
     public float UnitWaitTime { get { return unitWaitTime; } }
+    
+    public void LookAt(Vector3 pos)
+    {
+        Vector3 dir = (pos - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+        
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+    }
 
     
     
