@@ -176,10 +176,10 @@ public class Builder : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             bool canBuild = ghostBuilding.GetComponent<FindBuildingSite>().CanBuild;
-            //Debug.Log(hit.collider.tag);
+            Debug.Log(hit.collider.tag);
             if ((hit.collider.tag == "Ground") && canBuild)
             {
-                //Debug.Log("Click Ground to Build");
+                Debug.Log("Click Ground to Build");
                 CreateBuildingSite(hit.point); //Create building site with 1 HP
             }
         }
