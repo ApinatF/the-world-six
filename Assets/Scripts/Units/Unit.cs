@@ -82,8 +82,8 @@ public class Unit : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
 
-        if (IsBuilder)
-        { builder = GetComponent<Builder>(); }
+        if (IsBuilder) 
+            builder = GetComponent<Builder>(); 
     }
     
     void Start()

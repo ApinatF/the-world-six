@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   unitName: 
-  unitPic: {fileID: 21300000, guid: 5790d3a5db866bd4ea59945410bdaaad, type: 3}
+  unitPic: {fileID: 21300000, guid: 87f65e59b05e98748b760e92fbd1235a, type: 3}
   curHP: 100
   maxHP: 100
   moveSpeed: 5
