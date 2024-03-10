@@ -35,14 +35,21 @@ public class Builder : MonoBehaviour
         if (unit.State == UnitState.Die)
             return;
 
+        if (unit.State == UnitState.BuildProgress)////////// sixN
+        {
+            toBuild = true;
+        }////////// sixN
+
         if (toBuild) // if this unit is to build something
         {
             GhostBuildingFollowsMouse();
 
             if (Input.GetMouseButtonDown(0)) // Click to select a building site
             {
-                if (EventSystem.current.IsPointerOverGameObject())
+                if (EventSystem.current.IsPointerOverGameObject()) 
                     return;
+                if (unit.State == UnitState.BuildProgress) ////////// sixN
+                    return; ////////// sixN
                 
                 CheckClickOnGround();
             }
@@ -175,6 +182,7 @@ public class Builder : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
+            
             bool canBuild = ghostBuilding.GetComponent<FindBuildingSite>().CanBuild;
             Debug.Log(hit.collider.tag);
             if ((hit.collider.tag == "Ground") && canBuild)
@@ -196,6 +204,7 @@ public class Builder : MonoBehaviour
     
     private void BuildProgress()
     {
+        
         if (inProgressBuilding == null)
             return;
 
@@ -214,6 +223,7 @@ public class Builder : MonoBehaviour
         
         if (b.Timer >= b.WaitTime)
         {
+            
             b.Timer = 0;
             b.CurHP++;
 
