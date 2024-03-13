@@ -116,7 +116,8 @@ public class UnitSelect : MonoBehaviour
                     break;
                 case "Building":
                     BuildingSelect(hit);
-                    break;            
+                    break; 
+                
             }
         }
     }

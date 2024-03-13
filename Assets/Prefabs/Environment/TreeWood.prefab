@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1638305729631902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107,7 +107,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.2
-  m_Height: 6
+  m_Height: 4.85
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!208 &318549610777774912
@@ -120,7 +120,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.6, y: 3, z: 0.6}
+  m_Extents: {x: 0.6, y: 2.41, z: 0.6}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rsrcName: Tree
-  rsrcPic: {fileID: 0}
+  rsrcPic: {fileID: -835680081, guid: 75946305e4d9ba24b8840430a92534f9, type: 3}
   rsrcType: 1
   quantity: 100
   maxQuantity: 100
