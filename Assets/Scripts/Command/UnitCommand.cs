@@ -57,6 +57,9 @@ public class UnitCommand : MonoBehaviour
                 case "Ground":
                     CommandToGround(hit, unitSelect.CurUnit);
                     break;
+                case "Resource":
+                    CommandToGround(hit, unitSelect.CurUnit);
+                    break;
             }
         }
     }
@@ -67,6 +70,21 @@ public class UnitCommand : MonoBehaviour
             return;
 
         Instantiate(vfxPrefab, new Vector3(pos.x, 0.1f, pos.z), Quaternion.identity);
+    }
+    
+    // called when we command units to gather a resource
+    private void UnitsToGatherResource(ResourceSource resource, Unit unit)
+    {
+        if (unit.IsWorker)
+            unit.Worker.ToGatherResource(resource, resource.transform.position);
+        else
+            unit.MoveToPosition(resource.transform.position);
+    }
+    
+    private void ResourceCommand(RaycastHit hit, Unit unit)
+    {
+        UnitsToGatherResource(hit.collider.GetComponent<ResourceSource>(), unit);
+        CreateVFXMarker(hit.transform.position, MainUI.instance.SelectionMarker);
     }
     
 }
