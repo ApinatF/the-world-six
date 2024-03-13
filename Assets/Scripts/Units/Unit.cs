@@ -10,6 +10,10 @@ public enum UnitState
     Attack,
     MoveToBuild,
     BuildProgress,
+    MoveToResource,
+    Gather,
+    DeliverToHQ,
+    StoreAtHQ,
     Die
 }
 
@@ -66,6 +70,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private Faction faction;
     public Faction Faction { get { return faction;} set { faction = value; } }
     
+    [SerializeField] private bool isWorker;
+    public bool IsWorker { get { return isWorker; } set { isWorker = value; } }
+
+    [SerializeField] private Worker worker;
+    public Worker Worker { get { return worker; } }
+    
     
 
     [SerializeField] private GameObject selectionVisual;
@@ -83,7 +93,10 @@ public class Unit : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
 
         if (IsBuilder) 
-            builder = GetComponent<Builder>(); 
+            builder = GetComponent<Builder>();
+        if (IsWorker)
+            worker = GetComponent<Worker>();
+        
     }
     
     void Start()
