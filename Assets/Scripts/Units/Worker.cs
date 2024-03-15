@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Worker : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class Worker : MonoBehaviour
 
     private float lastGatherTime;
     private Unit unit;
+
+    [SerializeField] private Object hammer, axe;
     
     void Start()
     {
@@ -156,4 +159,5 @@ public class Worker : MonoBehaviour
             }
         }
     }
+    
 }

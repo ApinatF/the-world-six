@@ -37,4 +37,12 @@ public class TestScene : MonoBehaviour
             units[i].State = UnitState.BuildProgress;
         }
     }
+    
+    public void SetGather()
+    {
+        for (int i = 0; i < units.Length; i++)
+        {
+            units[i].State = UnitState.Gather;
+        }
+    }
 }
