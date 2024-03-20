@@ -2827,6 +2827,7 @@ GameObject:
   - component: {fileID: -928107137872229191}
   - component: {fileID: 738550722972111207}
   - component: {fileID: 585973363883203232}
+  - component: {fileID: -7465132216778635206}
   m_Layer: 6
   m_Name: BlueSkull
   m_TagString: Unit
@@ -2967,6 +2968,7 @@ MonoBehaviour:
   curEnemyUnitTarget: {fileID: 0}
   attackRate: 1
   lastAttackTime: 0
+  defendRange: 30
   unitCost:
     food: 50
     wood: 20
@@ -2983,6 +2985,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e68b635b6a958348a672e1913b3dd99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7465132216778635206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4793dc5b39610dc4ab734d55370bf221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &147900

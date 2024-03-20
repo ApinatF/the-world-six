@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3886294832896728629}
   - component: {fileID: 6212167029690678624}
   - component: {fileID: 1392021884053837086}
+  - component: {fileID: 5157739711979676445}
   m_Layer: 6
   m_Name: Builder
   m_TagString: Unit
@@ -153,6 +154,10 @@ MonoBehaviour:
   selectionVisual: {fileID: 1579503041846954064}
   isBuilder: 1
   builder: {fileID: 0}
+  curEnemyUnitTarget: {fileID: 0}
+  attackRate: 1
+  lastAttackTime: 0
+  defendRange: 30
   unitCost:
     food: 50
     wood: 10
@@ -214,6 +219,18 @@ MonoBehaviour:
   carryType: 1
   hammer: {fileID: 9057726817241384612}
   axe: {fileID: 4637952849490011929}
+--- !u!114 &5157739711979676445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4793dc5b39610dc4ab734d55370bf221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &59034984833949386
 GameObject:
   m_ObjectHideFlags: 0

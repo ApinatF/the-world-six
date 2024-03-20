@@ -15,6 +15,8 @@ public enum UnitState
     DeliverToHQ,
     StoreAtHQ,
     MoveToEnemy,
+    MoveToEnemyBuilding,
+    AttackBuilding,
     Die
 }
 
@@ -98,6 +100,9 @@ public class Unit : MonoBehaviour
     
     [SerializeField]
     private Unit curEnemyUnitTarget;
+    
+    [SerializeField]
+    private Building curEnemyBuildingTarget;
 
     [SerializeField]
     private float attackRate = 1f; //how frequent this unit attacks in second

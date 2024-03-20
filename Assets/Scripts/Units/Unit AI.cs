@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class UnitAI : MonoBehaviour
 {
+    
     protected float checkRate = 1.0f;
 
     protected LayerMask unitLayerMask;
     protected LayerMask buildingLayerMask;
 
     protected Unit unit;
-   
+    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Check", 0.0f, checkRate);
