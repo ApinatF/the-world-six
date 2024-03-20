@@ -7,13 +7,14 @@ public enum UnitState
 {
     Idle,
     Move,
-    Attack,
+    AttackUnit,
     MoveToBuild,
     BuildProgress,
     MoveToResource,
     Gather,
     DeliverToHQ,
     StoreAtHQ,
+    MoveToEnemy,
     Die
 }
 
