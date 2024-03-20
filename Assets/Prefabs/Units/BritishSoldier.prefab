@@ -5268,8 +5268,8 @@ MonoBehaviour:
   minWpnDamage: 5
   maxWpnDamage: 15
   armour: 8
-  visualRange: 0
-  weaponRange: 0
+  visualRange: 15
+  weaponRange: 10
   state: 0
   faction: {fileID: 0}
   isWorker: 0
@@ -5279,6 +5279,9 @@ MonoBehaviour:
   selectionVisual: {fileID: 1579503041846954064}
   isBuilder: 0
   builder: {fileID: 0}
+  curEnemyUnitTarget: {fileID: 0}
+  attackRate: 1
+  lastAttackTime: 0
   unitCost:
     food: 50
     wood: 10

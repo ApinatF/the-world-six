@@ -2947,14 +2947,14 @@ MonoBehaviour:
   id: 1
   unitName: Fr. Regular
   unitPic: {fileID: 85887920, guid: 75946305e4d9ba24b8840430a92534f9, type: 3}
-  curHP: 0
+  curHP: 100
   maxHP: 100
   moveSpeed: 5
-  minWpnDamage: 0
-  maxWpnDamage: 0
-  armour: 0
-  visualRange: 0
-  weaponRange: 0
+  minWpnDamage: 5
+  maxWpnDamage: 10
+  armour: 5
+  visualRange: 12
+  weaponRange: 10
   state: 0
   faction: {fileID: 0}
   isWorker: 0
@@ -2964,6 +2964,9 @@ MonoBehaviour:
   selectionVisual: {fileID: 7510016851803281026, guid: 1f7cc050f663bd9489bd8e48c8e3fbb5, type: 3}
   isBuilder: 0
   builder: {fileID: 0}
+  curEnemyUnitTarget: {fileID: 0}
+  attackRate: 1
+  lastAttackTime: 0
   unitCost:
     food: 50
     wood: 20
