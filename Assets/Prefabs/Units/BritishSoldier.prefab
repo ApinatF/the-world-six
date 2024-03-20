@@ -5281,6 +5281,7 @@ MonoBehaviour:
   isBuilder: 0
   builder: {fileID: 0}
   curEnemyUnitTarget: {fileID: 0}
+  curEnemyBuildingTarget: {fileID: 0}
   attackRate: 1
   lastAttackTime: 0
   defendRange: 30
@@ -5289,7 +5290,7 @@ MonoBehaviour:
     wood: 10
     gold: 20
     stone: 0
-  unitWaitTime: 0.1
+  unitWaitTime: 0
 --- !u!114 &3886294832896728629
 MonoBehaviour:
   m_ObjectHideFlags: 0

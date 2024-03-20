@@ -108,6 +108,10 @@ public class UnitSelect : MonoBehaviour
             //Debug.Log("my building");
             ShowBuilding(curBuilding);//Show building info
         }
+        else
+        {
+            ShowEnemyBuilding(curBuilding);
+        }
     }
     private void ShowUnit(Unit u)
     {
@@ -259,6 +263,11 @@ public class UnitSelect : MonoBehaviour
             }
         }
         selectionBox.sizeDelta = new Vector2(0, 0); //clear Selection Box's size;
+    }
+    
+    private void ShowEnemyBuilding(Building b)
+    {
+        InfoManager.instance.ShowEnemyAllInfo(b);
     }
     
     

@@ -41,5 +41,21 @@ public abstract class Structure : MonoBehaviour
     [SerializeField] 
     private StructureCost structureCost;
     public StructureCost StructureCost { get { return structureCost; } set { structureCost = value; } }
+    
+    
+    protected void Die()
+    {
+        InfoManager.instance.ClearAllInfo();
+        Destroy(gameObject);
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+        if (curHP <= 0)
+            Die();
+    }
+    
+    
 
 }
