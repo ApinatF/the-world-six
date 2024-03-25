@@ -45,4 +45,12 @@ public class TestScene : MonoBehaviour
             units[i].State = UnitState.Gather;
         }
     }
+    
+    public void SetDie()
+    {
+        for (int i = 0; i < units.Length; i++)
+        {
+            units[i].State = UnitState.Die;
+        }
+    }
 }

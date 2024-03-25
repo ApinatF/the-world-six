@@ -3418,6 +3418,10 @@ PrefabInstance:
       value: House
       objectReference: {fileID: 0}
     - target: {fileID: 6727633918175250301, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
+      propertyPath: curHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727633918175250301, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
       propertyPath: faction
       value: 
       objectReference: {fileID: 720310387}
@@ -5056,6 +5060,10 @@ PrefabInstance:
     - target: {fileID: 2696696916481741898, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+      propertyPath: curHP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
       propertyPath: faction
