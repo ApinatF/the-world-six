@@ -67,7 +67,7 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
-  isFunctional: 0
+  isFunctional: 1
   isHQ: 0
   intoTheGround: 5
 --- !u!65 &2236260951449359457
