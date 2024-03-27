@@ -58,11 +58,19 @@ MonoBehaviour:
   aliveUnits: []
   aliveBuildings:
   - {fileID: 4060643059476965699, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
-  - {fileID: 6727633918175250301, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
   unitsParent: {fileID: 3542991021543158145}
   buildingsParent: {fileID: 822529479657958599}
   ghostBuildingParent: {fileID: 7664687207930798215}
   startPosition: {fileID: 1131822373817917502}
+  newResourceRange: 50
+  buildingPrefabs:
+  - {fileID: 4830684925933536311, guid: 5ff07219e0dd3054282bb44d564937f4, type: 3}
+  - {fileID: 6388156475709097817, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
+  - {fileID: 1967575675051672199, guid: d6f253d21490ca2479fb3080fb4edded, type: 3}
+  - {fileID: 6388156475709097817, guid: d23b23800d7fba44d97cb2668a0ab639, type: 3}
+  unitPrefabs:
+  - {fileID: 186328, guid: 6a76445112c13184baf3cbda68a4b9c1, type: 3}
+  - {fileID: 186328, guid: 1cc4fa6a45bafa8408f995b896596782, type: 3}
 --- !u!114 &296246741266825138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,8 +86,11 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  curUnit: {fileID: 0}
+  curUnits: []
   curBuilding: {fileID: 0}
+  curResource: {fileID: 0}
+  selectionBox: {fileID: 0}
+  curEnemy: {fileID: 0}
 --- !u!114 &8601346177433362774
 MonoBehaviour:
   m_ObjectHideFlags: 0

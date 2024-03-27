@@ -111,7 +111,7 @@ public class Building : Structure
         if (unitPrefabs[id] == null)
             return;
 
-        GameObject unitObj = Instantiate(unitPrefabs[id], 
+        GameObject unitObj = Instantiate(faction.UnitPrefabs[id], 
             spawnPoint.position, 
             Quaternion.Euler(0f, 180f, 0f),
             faction.UnitsParent);
