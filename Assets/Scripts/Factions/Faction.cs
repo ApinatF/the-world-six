@@ -55,7 +55,10 @@ public class Faction : MonoBehaviour
     
     [SerializeField] private GameObject[] buildingPrefabs;
     public GameObject[] BuildingPrefabs { get { return buildingPrefabs; } }
-
+    
+    [SerializeField] private GameObject[] ghostbuildingPrefabs;
+    public GameObject[] GhostBuildingPrefabs { get { return ghostbuildingPrefabs; } }
+    
     [SerializeField] private GameObject[] unitPrefabs;
     public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
     
@@ -63,7 +66,12 @@ public class Faction : MonoBehaviour
     public int UnitLimit { get { return unitLimit; } }
     private int housingUnitNum = 5; //number of units per each housing
     public int HousingUnitNum { get { return housingUnitNum; } }
-    
+
+    private void Start()
+    {
+        UpdateHousingLimit();
+    }
+
     public void DeductUnitCost(Unit unit)
     {
         food -= unit.UnitCost.food;
@@ -152,6 +160,8 @@ public class Faction : MonoBehaviour
     {
         foreach (Building b in aliveBuildings)
         {
+            if (b == null)
+                continue;
             if (b.IsHQ)
                 return b.SpawnPoint.position;
         }
@@ -236,7 +246,8 @@ public class Faction : MonoBehaviour
         else if (unitLimit < 0)
             unitLimit = 0;
 
-        MainUI.instance.UpdateAllResource(this);
+        if (this == GameManager.instance.MyFaction)
+            MainUI.instance.UpdateAllResource(this);
     }
 
 
