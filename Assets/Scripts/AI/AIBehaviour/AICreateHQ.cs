@@ -13,7 +13,8 @@ public class AICreateHQ : AIBehaviour
 
     protected GameObject buildingObj; //Instantiated Object by Prefab
     protected GameObject buildingObjGhost; //Instantiated Ghost Object by Prefab
-    
+
+    // Start is called before the first frame update
     void Start()
     {
         support = gameObject.GetComponent<AISupport>();
@@ -21,8 +22,14 @@ public class AICreateHQ : AIBehaviour
         buildingPrefab = support.Faction.BuildingPrefabs[0];
         buildingGhostPrefab = support.Faction.GhostBuildingPrefabs[0];
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     
-    public override float GetWeight()
+        public override float GetWeight()
     {
         Building b = buildingPrefab.GetComponent<Building>();
 
@@ -34,7 +41,8 @@ public class AICreateHQ : AIBehaviour
 
         return 0;
     }
-    
+
+
     protected void ShowHide3DModel(GameObject obj, bool show)
     {
         Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
@@ -42,7 +50,8 @@ public class AICreateHQ : AIBehaviour
         foreach (Renderer r in renderers)
             r.enabled = show;
     }
-    
+
+
     public override void Execute()
     {
         if (buildingObjGhost == null) //if there is no ghost building
@@ -118,4 +127,6 @@ public class AICreateHQ : AIBehaviour
             }
         }
     }
+
+
 }
