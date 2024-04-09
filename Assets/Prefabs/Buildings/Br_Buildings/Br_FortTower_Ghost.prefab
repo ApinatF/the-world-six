@@ -49,7 +49,6 @@ GameObject:
   - component: {fileID: 2236260951449359457}
   - component: {fileID: 4401961131819337893}
   - component: {fileID: 4302001845950040283}
-  - component: {fileID: 1592601538171001628}
   m_Layer: 2
   m_Name: Br_FortTower_Ghost
   m_TagString: GhostBuilding
@@ -92,7 +91,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 28.3, y: 10, z: 30.4}
   m_Center: {x: 0, y: 5, z: 0}
@@ -144,27 +143,6 @@ MonoBehaviour:
   - {fileID: 7273079187000616342}
   - {fileID: 7586633498378396508}
   planeRdr: {fileID: 8664028659654817601}
---- !u!135 &1592601538171001628
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6388156475709097817}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 14.82
-  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &6596650583655812041
 GameObject:
   m_ObjectHideFlags: 0
