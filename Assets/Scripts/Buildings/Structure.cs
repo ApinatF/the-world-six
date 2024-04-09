@@ -43,7 +43,7 @@ public abstract class Structure : MonoBehaviour
     public StructureCost StructureCost { get { return structureCost; } set { structureCost = value; } }
     
     
-    protected virtual void Die()
+    protected void Die()
     {
         InfoManager.instance.ClearAllInfo();
         Destroy(gameObject);
