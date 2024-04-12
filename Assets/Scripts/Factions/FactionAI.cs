@@ -33,6 +33,8 @@ public class FactionAI : MonoBehaviour
                 if (faction.CheckUnitCost(0))
                     curHQ.ToCreateUnit(0); //HQ recruits a primary worker/builder
             }
+
+            
         }
 
         //Create main fighters

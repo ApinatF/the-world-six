@@ -55,6 +55,9 @@ public class AISupport : MonoBehaviour
                 fighters.Add(u.gameObject);
         }
         
+        hq.Clear();
+        houses.Clear();
+        barracks.Clear();
         foreach (Building b in faction.AliveBuildings)
         {
             if (b == null)
@@ -62,13 +65,13 @@ public class AISupport : MonoBehaviour
                 continue;
             }
             
-            if (b.IsHQ) //if it is a builder
+            if (b.IsHQ) 
                 hq.Add(b.gameObject);
             
-            if (b.IsHousing) //if it is a worker
+            if (b.IsHousing) 
                 houses.Add(b.gameObject);
 
-            if (b.IsHQ) //if it is a fighter
+            if (b.IsBarrack) 
                 Barracks.Add(b.gameObject);
         }
         

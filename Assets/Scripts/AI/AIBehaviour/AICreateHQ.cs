@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class AICreateHQ : AIBehaviour
 {
@@ -23,7 +25,6 @@ public class AICreateHQ : AIBehaviour
         buildingPrefab = support.Faction.BuildingPrefabs[0];
         buildingGhostPrefab = support.Faction.GhostBuildingPrefabs[0];
     }
-
     
     public override float GetWeight()
     {
@@ -54,7 +55,7 @@ public class AICreateHQ : AIBehaviour
         {
             buildingObjGhost = Instantiate(buildingGhostPrefab);
             buildingObjGhost.transform.SetParent(support.Faction.GhostBuildingParent);
-            //Debug.Log("Create Ghost Building");
+            Debug.Log("Create Ghost Building");
         }
 
         //Hide Ghost Building's 3D Model
@@ -63,13 +64,14 @@ public class AICreateHQ : AIBehaviour
         //if there is a ghost building that has been instantiated from the last frame
         if (buildingObjGhost.GetComponent<FindBuildingSite>().CanBuild == true)
         {
-            //Debug.Log("Can Built");
+            Debug.Log("Can Built");
             buildingObj = Instantiate(buildingPrefab);
 
             Building b = buildingObj.GetComponent<Building>();
             buildingObj.transform.position = new Vector3(buildingObjGhost.transform.position.x,
                                                         buildingObj.transform.position.y - b.GetComponent<Building>().IntoTheGround,
                                                         buildingObjGhost.transform.position.z);
+            
 
             buildingObj.transform.parent = support.Faction.BuildingsParent;
 

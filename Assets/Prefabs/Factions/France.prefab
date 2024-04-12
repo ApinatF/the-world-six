@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328796957916908157}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501023700146377158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   - {fileID: 6388156475709097817, guid: 66e7f5aee98966f4fb0e897a8821edff, type: 3}
   - {fileID: 1967575675051672199, guid: 47bb8cab63e9c3d4c9ff7328f4546b5f, type: 3}
   - {fileID: 6388156475709097817, guid: 4e8aec8cbda7c194393c0017ef143370, type: 3}
-  ghostbuildingPrefabs:
+  ghostBuildingPrefabs:
   - {fileID: 4830684925933536311, guid: 751edc4d83de584478b439cafb85b783, type: 3}
   - {fileID: 6388156475709097817, guid: 512e41af38690344c8d52383b768d8cf, type: 3}
   - {fileID: 6388156475709097817, guid: f65617b9adb4d224f8dda0f351bf2afb, type: 3}
@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5830865930430451318}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

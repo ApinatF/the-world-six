@@ -56,8 +56,8 @@ public class Faction : MonoBehaviour
     [SerializeField] private GameObject[] buildingPrefabs;
     public GameObject[] BuildingPrefabs { get { return buildingPrefabs; } }
     
-    [SerializeField] private GameObject[] ghostbuildingPrefabs;
-    public GameObject[] GhostBuildingPrefabs { get { return ghostbuildingPrefabs; } }
+    [SerializeField] private GameObject[] ghostBuildingPrefabs;
+    public GameObject[] GhostBuildingPrefabs { get { return ghostBuildingPrefabs; } }
 
     [SerializeField] private GameObject[] unitPrefabs;
     public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
