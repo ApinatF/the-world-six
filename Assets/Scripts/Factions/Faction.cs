@@ -66,7 +66,14 @@ public class Faction : MonoBehaviour
     public int UnitLimit { get { return unitLimit; } }
     private int housingUnitNum = 5; //number of units per each housing
     public int HousingUnitNum { get { return housingUnitNum; } }
+
+    private void Start()
+    {
+        UpdateHousingLimit();
+    }
     
+
+
     public void DeductUnitCost(Unit unit)
     {
         food -= unit.UnitCost.food;
@@ -243,8 +250,8 @@ public class Faction : MonoBehaviour
             unitLimit = 100;
         else if (unitLimit < 0)
             unitLimit = 0;
-
-        MainUI.instance.UpdateAllResource(this);
+        if (this == GameManager.instance.MyFaction) 
+            MainUI.instance.UpdateAllResource(this);
     }
 
 

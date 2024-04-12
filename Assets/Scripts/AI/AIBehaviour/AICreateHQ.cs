@@ -11,6 +11,7 @@ public class AICreateHQ : AIBehaviour
 
     public float rangeFromStartPos = 30f;
 
+    [SerializeField] private GameObject GhostTT;
     protected GameObject buildingPrefab; //HQ's Prefab
     protected GameObject buildingGhostPrefab;
 
@@ -54,6 +55,8 @@ public class AICreateHQ : AIBehaviour
         if (buildingObjGhost == null) //if there is no ghost building
         {
             buildingObjGhost = Instantiate(buildingGhostPrefab);
+
+            buildingObjGhost.transform.position = GhostTT.transform.position;
             buildingObjGhost.transform.SetParent(support.Faction.GhostBuildingParent);
             Debug.Log("Create Ghost Building");
         }

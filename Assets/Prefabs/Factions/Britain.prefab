@@ -15,7 +15,7 @@ GameObject:
   m_Layer: 0
   m_Name: Britain
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -68,11 +68,7 @@ MonoBehaviour:
   - {fileID: 6388156475709097817, guid: ce0e43b839649ef468d5bd0ec39e4c1a, type: 3}
   - {fileID: 1967575675051672199, guid: d6f253d21490ca2479fb3080fb4edded, type: 3}
   - {fileID: 6388156475709097817, guid: d23b23800d7fba44d97cb2668a0ab639, type: 3}
-  ghostbuildingPrefabs:
-  - {fileID: 4830684925933536311, guid: 2bc61dadca359164793e90c68ffa3ec2, type: 3}
-  - {fileID: 6388156475709097817, guid: 9bf40df737bc86247b2e4d1947aff1ff, type: 3}
-  - {fileID: 6388156475709097817, guid: e0c162fc5e78f774baf801f8201548eb, type: 3}
-  - {fileID: 6388156475709097817, guid: 1cbcf38594c6e3c47827c145327c49ab, type: 3}
+  ghostBuildingPrefabs: []
   unitPrefabs:
   - {fileID: 186328, guid: 6a76445112c13184baf3cbda68a4b9c1, type: 3}
   - {fileID: 186328, guid: 1cc4fa6a45bafa8408f995b896596782, type: 3}
