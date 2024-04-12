@@ -13,9 +13,23 @@ public class AISupport : MonoBehaviour
 
     [SerializeField] private List<GameObject> workers = new List<GameObject>(); //worker
     public List<GameObject> Workers { get { return workers; } }
+    
+    [SerializeField] private List<GameObject> hq = new List<GameObject>(); //worker
+    public List<GameObject> HQ { get { return hq; } }
+    
+    [SerializeField] private List<GameObject> houses = new List<GameObject>(); //worker
+    public List<GameObject> Houses { get { return houses; } }
+    
+    [SerializeField] private List<GameObject> barracks = new List<GameObject>(); //worker
+    public List<GameObject> Barracks { get { return barracks; } }
 
     [SerializeField] private Faction faction;
     public Faction Faction { get { return faction; } }
+    
+    void Awake()
+    {
+        faction = GetComponent<Faction>();
+    }
 
 
     public void Refresh()
@@ -26,6 +40,11 @@ public class AISupport : MonoBehaviour
 
         foreach (Unit u in faction.AliveUnits)
         {
+            if (u.gameObject == null)
+            {
+                continue;
+            }
+            
             if (u.IsBuilder) //if it is a builder
                 builders.Add(u.gameObject);
             
@@ -35,13 +54,29 @@ public class AISupport : MonoBehaviour
             if (!u.IsBuilder && !u.IsWorker) //if it is a fighter
                 fighters.Add(u.gameObject);
         }
+        
+        foreach (Building b in faction.AliveBuildings)
+        {
+            if (b == null)
+            {
+                continue;
+            }
+            
+            if (b.IsHQ) //if it is a builder
+                hq.Add(b.gameObject);
+            
+            if (b.IsHousing) //if it is a worker
+                houses.Add(b.gameObject);
+
+            if (b.IsHQ) //if it is a fighter
+                Barracks.Add(b.gameObject);
+        }
+        
+        
     }
 
 
-    void Start()
-    {
-        faction = GetComponent<Faction>();
-    }
+    
 
 
 }
