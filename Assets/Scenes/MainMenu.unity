@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda737ac3dbd2e42924e4eda5366160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: 
+  newScene: ChooseSide
 --- !u!1 &1319315084
 GameObject:
   m_ObjectHideFlags: 0
