@@ -121,4 +121,9 @@ public class CameraController : MonoBehaviour
         cam.transform.position += cam.transform.forward * zoomModifier * zoomSpeed;
 
     }
+    
+    public void FocusOnPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
 }
