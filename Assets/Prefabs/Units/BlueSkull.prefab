@@ -2966,6 +2966,7 @@ MonoBehaviour:
   isBuilder: 0
   builder: {fileID: 0}
   curEnemyUnitTarget: {fileID: 0}
+  curEnemyBuildingTarget: {fileID: 0}
   attackRate: 1
   lastAttackTime: 0
   defendRange: 30
