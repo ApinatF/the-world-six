@@ -8570,7 +8570,11 @@ PrefabInstance:
     - target: {fileID: 1788456999206493024, guid: 8d272ba17f577a34fa3eb49ea4c8167b, type: 3}
       propertyPath: myFaction
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1483697879}
+    - target: {fileID: 1788456999206493024, guid: 8d272ba17f577a34fa3eb49ea4c8167b, type: 3}
+      propertyPath: enemyFaction
+      value: 
+      objectReference: {fileID: 1728450977}
     - target: {fileID: 1788456999206493024, guid: 8d272ba17f577a34fa3eb49ea4c8167b, type: 3}
       propertyPath: factions.Array.size
       value: 3

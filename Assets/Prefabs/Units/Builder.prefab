@@ -86,7 +86,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 186328}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.26
   m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
@@ -118,7 +118,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.32
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
     wood: 10
     gold: 20
     stone: 0
-  unitWaitTime: 0.1
+  unitWaitTime: 0
 --- !u!114 &3886294832896728629
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -134,6 +134,10 @@ public class UnitCommand : MonoBehaviour
 
         if (building == null)
             return;
+        
+        
+        
+        //CreateVFXMarker(hit.transform.position, MainUI.instance.SelectionMarker);
 
         // if it is an enemy's building
         if (building.Faction == GameManager.instance.EnemyFaction)

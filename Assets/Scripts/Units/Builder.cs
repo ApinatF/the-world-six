@@ -198,7 +198,7 @@ public class Builder : MonoBehaviour
         if (b == null)
             return;
 
-        unit.NavAgent.SetDestination(b.transform.position);
+        unit.NavAgent.SetDestination(b.transform.position + new Vector3(0,8,0));
         unit.NavAgent.isStopped = false;
     }
     

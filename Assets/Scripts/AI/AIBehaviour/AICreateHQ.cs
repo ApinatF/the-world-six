@@ -1,17 +1,14 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Random = UnityEngine.Random;
 
 public class AICreateHQ : AIBehaviour
 {
     protected AISupport support;
 
     public float rangeFromStartPos = 30f;
-
-    [SerializeField] private GameObject GhostTT;
+    
     protected GameObject buildingPrefab; //HQ's Prefab
     protected GameObject buildingGhostPrefab;
 
@@ -32,15 +29,18 @@ public class AICreateHQ : AIBehaviour
         Building b = buildingPrefab.GetComponent<Building>();
 
         if (!support.Faction.CheckBuildingCost(b)) //Don't have enough resource to build
+        {
             return 0;
+        }
 
         if (support.HQ.Count < 1) //If there are less than 1 HQ
+        {
             return 3f;
+        }
 
         return 0;
     }
-
-
+    
     protected void ShowHide3DModel(GameObject obj, bool show)
     {
         Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
@@ -55,10 +55,8 @@ public class AICreateHQ : AIBehaviour
         if (buildingObjGhost == null) //if there is no ghost building
         {
             buildingObjGhost = Instantiate(buildingGhostPrefab);
-
-            buildingObjGhost.transform.position = GhostTT.transform.position;
             buildingObjGhost.transform.SetParent(support.Faction.GhostBuildingParent);
-            Debug.Log("Create Ghost Building");
+            //Debug.Log("Create Ghost Building");
         }
 
         //Hide Ghost Building's 3D Model
@@ -67,14 +65,13 @@ public class AICreateHQ : AIBehaviour
         //if there is a ghost building that has been instantiated from the last frame
         if (buildingObjGhost.GetComponent<FindBuildingSite>().CanBuild == true)
         {
-            Debug.Log("Can Built");
+            //Debug.Log("Can Built");
             buildingObj = Instantiate(buildingPrefab);
 
             Building b = buildingObj.GetComponent<Building>();
             buildingObj.transform.position = new Vector3(buildingObjGhost.transform.position.x,
                                                         buildingObj.transform.position.y - b.GetComponent<Building>().IntoTheGround,
                                                         buildingObjGhost.transform.position.z);
-            
 
             buildingObj.transform.parent = support.Faction.BuildingsParent;
 

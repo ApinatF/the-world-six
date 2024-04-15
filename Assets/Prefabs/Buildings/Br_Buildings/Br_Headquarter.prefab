@@ -56,8 +56,8 @@ Transform:
   m_GameObject: {fileID: 3526204935377027227}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.030622, y: 0, z: 3.6316}
+  m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1817600847475522377}
@@ -184,7 +184,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 22, y: 10, z: 22}
-  m_Center: {x: 0, y: 5, z: -0.82}
+  m_Center: {x: 0, y: 5, z: 3.2}
 --- !u!54 &971924389653624811
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 5, z: -1.2}
+  m_Center: {x: 0, y: 5, z: 3.2}
   m_TimeToStationary: 0.5
 --- !u!1 &7881021493037978680
 GameObject:
@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 7881021493037978680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.65, z: -11.7}
+  m_LocalPosition: {x: 0.2, y: 0.65, z: -15.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
