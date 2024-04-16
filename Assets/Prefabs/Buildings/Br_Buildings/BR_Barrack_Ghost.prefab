@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 6388156475709097817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700df5ca223d60945b1e9abe4686d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuild: 1
+  canBuild: 0
   modelRdr:
   - {fileID: 2667734315491729964}
   planeRdr: {fileID: 8664028659654817601}

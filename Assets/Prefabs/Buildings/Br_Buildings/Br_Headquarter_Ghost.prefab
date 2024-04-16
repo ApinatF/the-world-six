@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700df5ca223d60945b1e9abe4686d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBuild: 1
+  canBuild: 0
   modelRdr:
   - {fileID: 1817600847473746467}
   - {fileID: 9127281981429386292}

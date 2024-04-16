@@ -65,7 +65,7 @@ public class AICreateHQ : AIBehaviour
         //if there is a ghost building that has been instantiated from the last frame
         if (buildingObjGhost.GetComponent<FindBuildingSite>().CanBuild == true)
         {
-            //Debug.Log("Can Built");
+            Debug.Log("Can Built 1" + buildingObjGhost.transform.position);
             buildingObj = Instantiate(buildingPrefab);
 
             Building b = buildingObj.GetComponent<Building>();
@@ -99,27 +99,35 @@ public class AICreateHQ : AIBehaviour
         {
             foreach (GameObject unit in support.Builders) //try to find a new building site for the next frame
             {
-                //Debug.Log(unit);
+                Debug.Log(unit);
 
                 Builder builder = unit.GetComponent<Builder>();
                 builder.NewBuilding = buildingPrefab;
 
                 Vector3 pos = unit.transform.position;
                 pos += Random.insideUnitSphere * rangeFromStartPos;
+                
+                Debug.Log("Random Pos = " + pos);
 
-                float Corner1PosX = CameraController.instance.Corner1.position.x;
-                float Corner2PosX = CameraController.instance.Corner2.position.x;
-                float Corner1PosZ = CameraController.instance.Corner1.position.z;
-                float Corner2PosZ = CameraController.instance.Corner2.position.z;
+                float Corner1PosX = 
+                    CameraController.instance.Corner1.position.x;
+                float Corner2PosX = 
+                    CameraController.instance.Corner2.position.x;
+                float Corner1PosZ = 
+                    CameraController.instance.Corner1.position.z;
+                float Corner2PosZ = 
+                    CameraController.instance.Corner2.position.z;
 
                 //Clamp pos to be in a map
-                pos = new Vector3(Mathf.Clamp(pos.x, Corner1PosX, Corner2PosX),
+                /*pos = new Vector3(Mathf.Clamp(pos.x, Corner1PosX, Corner2PosX),
                                     pos.y,
-                                    Mathf.Clamp(pos.z, Corner1PosZ, Corner2PosZ));
+                                    Mathf.Clamp(pos.z, Corner1PosZ, Corner2PosZ));*/
+                
+                //Debug.Log("Pos Mathf.Clamp 2 = " + pos);
 
                 pos.y = buildingGhostPrefab.transform.position.y;
 
-                //Debug.Log("Pos = " + pos);
+                //Debug.Log("Pos 2= " + pos);
 
                 buildingObjGhost.transform.position = pos;
             }
