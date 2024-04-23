@@ -43,14 +43,6 @@ public class Building : Structure
     public float IntoTheGround { get { return intoTheGround; } }
     
     
-    
-    
-    
-    void Start()
-    {
-        
-    }
-    
     void Update()
     {
 

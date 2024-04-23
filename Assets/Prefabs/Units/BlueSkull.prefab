@@ -2962,7 +2962,7 @@ MonoBehaviour:
   worker: {fileID: 0}
   pathUpdateRate: 1
   lastPathUpdateTime: 0
-  selectionVisual: {fileID: 7510016851803281026, guid: 1f7cc050f663bd9489bd8e48c8e3fbb5, type: 3}
+  selectionVisual: {fileID: 3535922816497883164}
   isBuilder: 0
   builder: {fileID: 0}
   curEnemyUnitTarget: {fileID: 0}
@@ -6343,6 +6343,11 @@ PrefabInstance:
 --- !u!4 &378921777964292004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6658814771751033146, guid: 1f7cc050f663bd9489bd8e48c8e3fbb5, type: 3}
+  m_PrefabInstance: {fileID: 6425211255356690078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3535922816497883164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7510016851803281026, guid: 1f7cc050f663bd9489bd8e48c8e3fbb5, type: 3}
   m_PrefabInstance: {fileID: 6425211255356690078}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7026286952556441552

@@ -167,7 +167,7 @@ public class Faction : MonoBehaviour
                 continue;
             }
             
-            if (b.IsHQ)
+            if (b.IsHQ || b.IsBarrack)
                 return b.SpawnPoint.position;
         }
         return startPosition.position;
