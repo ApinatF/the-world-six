@@ -20,54 +20,11 @@ public class Builder : MonoBehaviour
     public GameObject GhostBuilding { get { return ghostBuilding; } set { ghostBuilding = value; } }
 
     [SerializeField] private GameObject inProgressBuilding; // The building a unit is currently building
+
     
     public GameObject InProgressBuilding { get { return inProgressBuilding; } set { inProgressBuilding = value; } }
 
     private Unit unit;
-
-    private void Start()
-    {
-        unit = GetComponent<Unit>();
-    }
-    
-    void Update()
-    {
-        if (unit.State == UnitState.Die)
-            return;
-
-        if (unit.State == UnitState.BuildProgress)////////// sixN
-        {
-            toBuild = true;
-        }////////// sixN
-
-        if (toBuild) // if this unit is to build something
-        {
-            GhostBuildingFollowsMouse();
-
-            if (Input.GetMouseButtonDown(0)) // Click to select a building site
-            {
-                if (EventSystem.current.IsPointerOverGameObject()) 
-                    return;
-                if (unit.State == UnitState.BuildProgress) ////////// sixN
-                    return; ////////// sixN
-                
-                CheckClickOnGround();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
-                CancelToBuild();
-
-            switch (unit.State)
-            {
-                case UnitState.MoveToBuild:
-                    MoveToBuild(inProgressBuilding);
-                    break;
-                case UnitState.BuildProgress:
-                    BuildProgress();
-                    break;
-            }
-        }
-    }
     
     public void ToCreateNewBuilding(int i) //Start call from ActionManager UI Btns
     {
@@ -82,15 +39,14 @@ public class Builder : MonoBehaviour
         {
             //Create ghost building at the mouse position
             ghostBuilding = Instantiate(ghostBuildingList[i],
-                Input.mousePosition,
-                Quaternion.identity, unit.Faction.GhostBuildingParent);
+                                        Input.mousePosition,
+                                        Quaternion.identity, unit.Faction.GhostBuildingParent);
 
             toBuild = true;
             newBuilding = buildingList[i]; //Set prefab into new building
             showGhost = true;
         }
     }
-    
     private void GhostBuildingFollowsMouse()
     {
         if (showGhost)
@@ -107,7 +63,6 @@ public class Builder : MonoBehaviour
             }
         }
     }
-    
     private void CancelToBuild()
     {
         toBuild = false;
@@ -118,18 +73,15 @@ public class Builder : MonoBehaviour
         ghostBuilding = null;
         //Debug.Log("Cancel Building");
     }
-    
     public void BuilderStartFixBuilding(GameObject target)
     {
-        inProgressBuilding = target;        
+        inProgressBuilding = target;
         unit.SetState(UnitState.MoveToBuild);
     }
-    
     private void StartConstruction(GameObject buildingObj)
     {
         BuilderStartFixBuilding(buildingObj);
     }
-    
     public void CreateBuildingSite(Vector3 pos) //Set a building site
     {
         if (ghostBuilding != null)
@@ -140,17 +92,18 @@ public class Builder : MonoBehaviour
 
         //We use prefab position.y when instantiating.
         GameObject buildingObj = Instantiate(newBuilding,
-            new Vector3(pos.x, newBuilding.transform.position.y, pos.z),
-            Quaternion.identity);
+                                            new Vector3(pos.x, newBuilding.transform.position.y, pos.z),
+                                            Quaternion.identity);
 
         newBuilding = null; //Clear 
 
         Building building = buildingObj.GetComponent<Building>();
 
         //Set building to be underground
-        buildingObj.transform.position = new Vector3(buildingObj.transform.position.x, buildingObj.transform.position.y - building.IntoTheGround,
-            buildingObj.transform.position.z);
-        //Set building's parent game object
+        buildingObj.transform.position = new Vector3(buildingObj.transform.position.x,
+                                    buildingObj.transform.position.y - building.IntoTheGround,
+                                    buildingObj.transform.position.z);
+        // Set building's parent game object
         buildingObj.transform.parent = unit.Faction.BuildingsParent.transform;
 
         inProgressBuilding = buildingObj; //set a new clone building object to be a building in Unit's mind
@@ -174,7 +127,6 @@ public class Builder : MonoBehaviour
         //order builders to build together
         StartConstruction(inProgressBuilding);
     }
-    
     private void CheckClickOnGround()
     {
         Ray ray = CameraController.instance.Cam.ScreenPointToRay(Input.mousePosition);
@@ -182,29 +134,33 @@ public class Builder : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            
             bool canBuild = ghostBuilding.GetComponent<FindBuildingSite>().CanBuild;
-            Debug.Log(hit.collider.tag);
+            //Debug.Log(hit.collider.tag);
             if ((hit.collider.tag == "Ground") && canBuild)
             {
-                Debug.Log("Click Ground to Build");
+                //Debug.Log("Click Ground to Build");
                 CreateBuildingSite(hit.point); //Create building site with 1 HP
             }
         }
     }
-    
     private void MoveToBuild(GameObject b)
     {
         if (b == null)
             return;
 
-        unit.NavAgent.SetDestination(b.transform.position + new Vector3(0,8,0));
+        unit.NavAgent.SetDestination(b.transform.position);
         unit.NavAgent.isStopped = false;
     }
-    
+
+    public void LookAt(Vector3 pos)
+    {
+        Vector3 dir = (pos - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+    }
     private void BuildProgress()
     {
-        
         if (inProgressBuilding == null)
             return;
 
@@ -219,11 +175,11 @@ public class Builder : MonoBehaviour
             return;
         }
         //constructing
-        b.Timer += Time.deltaTime;
         
+        b.Timer += Time.deltaTime;
+
         if (b.Timer >= b.WaitTime)
         {
-            
             b.Timer = 0;
             b.CurHP++;
 
@@ -231,7 +187,7 @@ public class Builder : MonoBehaviour
                 //Raise up building from the ground
                 inProgressBuilding.transform.position += new Vector3(0f, b.IntoTheGround / (b.MaxHP - 1), 0f);
 
-            if (b.CurHP >= b.MaxHP) //finish
+            if (b.CurHP >= b.MaxHP)
             {
                 b.CurHP = b.MaxHP;
                 b.IsFunctional = true;
@@ -243,7 +199,6 @@ public class Builder : MonoBehaviour
             }
         }
     }
-    
     private void OnTriggerStay(Collider other)
     {
         if (unit.State == UnitState.Die)
@@ -258,10 +213,49 @@ public class Builder : MonoBehaviour
             }
         }
     }
-    
     private void OnDestroy()
     {
         if (ghostBuilding != null)
             Destroy(ghostBuilding);
+    }
+
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        unit = GetComponent<Unit>();
+        
+    }
+    void Update()
+    {
+        if (unit.State == UnitState.Die)
+            return;
+
+        if (toBuild) // if this unit is to build something
+        {
+            GhostBuildingFollowsMouse();
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
+                CheckClickOnGround();
+            }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+            CancelToBuild();
+        switch(unit.State)
+        {
+            case UnitState.MoveToBuild:
+                MoveToBuild(inProgressBuilding);
+                break;
+            case UnitState.BuildProgress:
+                BuildProgress();
+                break;
+        }
+
+
     }
 }

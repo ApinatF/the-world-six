@@ -100,7 +100,7 @@ public class Building : Structure
     {
         int id = recruitList[0].ID;
 
-          if (unitPrefabs[id] == null)
+          if (faction.UnitPrefabs[id] == null)
             return;
 
         GameObject unitObj = Instantiate(faction.UnitPrefabs[id], 
