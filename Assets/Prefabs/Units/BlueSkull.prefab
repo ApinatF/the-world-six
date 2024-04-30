@@ -2828,6 +2828,7 @@ GameObject:
   - component: {fileID: 738550722972111207}
   - component: {fileID: 585973363883203232}
   - component: {fileID: -7465132216778635206}
+  - component: {fileID: -7194969251370954906}
   m_Layer: 6
   m_Name: BlueSkull
   m_TagString: Unit
@@ -2998,6 +2999,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4793dc5b39610dc4ab734d55370bf221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7194969251370954906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28954995e06a7ce44b349eb55562fd48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &147900

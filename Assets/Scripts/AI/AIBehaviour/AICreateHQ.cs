@@ -109,21 +109,19 @@ public class AICreateHQ : AIBehaviour
                 
                 Debug.Log("Random Pos = " + pos);
 
-                float Corner1PosX = 
-                    CameraController.instance.Corner1.position.x;
-                float Corner2PosX = 
-                    CameraController.instance.Corner2.position.x;
-                float Corner1PosZ = 
-                    CameraController.instance.Corner1.position.z;
-                float Corner2PosZ = 
-                    CameraController.instance.Corner2.position.z;
+                float Corner1PosX = CameraController.instance.Corner1.position.x;
+                float Corner2PosX = CameraController.instance.Corner2.position.x;
+                float Corner1PosZ = CameraController.instance.Corner1.position.z;
+                float Corner2PosZ = CameraController.instance.Corner2.position.z;
+                
+                Debug.Log("Pos corner= " + pos);
 
                 //Clamp pos to be in a map
                 /*pos = new Vector3(Mathf.Clamp(pos.x, Corner1PosX, Corner2PosX),
                                     pos.y,
-                                    Mathf.Clamp(pos.z, Corner1PosZ, Corner2PosZ));*/
+                                    Mathf.Clamp(pos.z, Corner1PosZ, Corner2PosZ));*/ //ได้ไง
                 
-                //Debug.Log("Pos Mathf.Clamp 2 = " + pos);
+                Debug.Log("Pos Mathf.Clamp 2 = " + pos);
 
                 pos.y = buildingGhostPrefab.transform.position.y;
 

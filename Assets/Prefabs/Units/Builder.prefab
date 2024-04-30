@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6212167029690678624}
   - component: {fileID: 1392021884053837086}
   - component: {fileID: 5157739711979676445}
+  - component: {fileID: 1603947565666009026}
   m_Layer: 6
   m_Name: Builder
   m_TagString: Unit
@@ -222,8 +223,6 @@ MonoBehaviour:
   amountCarry: 0
   maxCarry: 25
   carryType: 1
-  hammer: {fileID: 9057726817241384612}
-  axe: {fileID: 4637952849490011929}
 --- !u!114 &5157739711979676445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +233,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4793dc5b39610dc4ab734d55370bf221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1603947565666009026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28954995e06a7ce44b349eb55562fd48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &59034984833949386
@@ -6616,11 +6627,6 @@ PrefabInstance:
 --- !u!4 &4637952849489918777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e8be50f661833140ad7d457c4c44907, type: 3}
-  m_PrefabInstance: {fileID: 4637952849490043321}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4637952849490011929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0e8be50f661833140ad7d457c4c44907, type: 3}
   m_PrefabInstance: {fileID: 4637952849490043321}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9066719309182623442
