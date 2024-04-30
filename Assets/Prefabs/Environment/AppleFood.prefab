@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rsrcName: Apple
-  rsrcPic: {fileID: -835680081, guid: 75946305e4d9ba24b8840430a92534f9, type: 3}
+  rsrcPic: {fileID: 21300000, guid: 51c402368022e1a4c9afef3a6b7c0c31, type: 3}
   rsrcType: 0
   quantity: 100
   maxQuantity: 100

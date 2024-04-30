@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   structureName: Barrack
-  structurePic: {fileID: -281338384, guid: 75946305e4d9ba24b8840430a92534f9, type: 3}
+  structurePic: {fileID: 21300000, guid: 322153d5a30cb32499e91f053ef76afe, type: 3}
   curHP: 0
   maxHP: 100
   faction: {fileID: 0}

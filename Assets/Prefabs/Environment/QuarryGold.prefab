@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 318549610777774912}
   - component: {fileID: 6702567043218220315}
   m_Layer: 9
-  m_Name: TreeWood
+  m_Name: QuarryGold
   m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638305729631902}
-  m_Mesh: {fileID: 4300000, guid: f27045a9f33583641a4dc4643e88f0d2, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4c4b71d8eef7ccd4fa291d2e260d3eba, type: 3}
 --- !u!23 &23231737067784118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdf18c58b725a2f469593ece1786d307, type: 2}
+  - {fileID: 2100000, guid: 47c807c03dcd03047a45cd53c3b41f55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec43c373409b174195d64154c4fa7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rsrcName: Tree
-  rsrcPic: {fileID: 21300000, guid: bc2f7917bd4a59a469e5e17c76553a9c, type: 3}
-  rsrcType: 1
+  rsrcName: Gold
+  rsrcPic: {fileID: 21300000, guid: badaf44755b691941a521581b27cdf66, type: 3}
+  rsrcType: 2
   quantity: 100
   maxQuantity: 100
   selectionVisual: {fileID: 9015491959078298362}

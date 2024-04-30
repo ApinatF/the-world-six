@@ -33,12 +33,12 @@ public class Unit : MonoBehaviour
 {
     [SerializeField] private int id;
     public int ID { get { return id; } set { id = value; } }
-
+    
     [SerializeField] private string unitName;
     public string UnitName { get { return unitName;} }
-
+    
     [SerializeField] private Sprite unitPic;
-    public Sprite UnitPic { get { return unitPic; } }
+    public Sprite UnitPic { get { return unitPic;} }
 
     [SerializeField] private int curHP;
     public int CurHP { get { return curHP; } set { curHP = value; } }
@@ -51,12 +51,12 @@ public class Unit : MonoBehaviour
 
     [SerializeField] private int minWpnDamage;
     public int MinWpnDamage { get { return minWpnDamage; } }
-
+    
     [SerializeField] private int maxWpnDamage;
     public int MaxWpnDamage { get { return maxWpnDamage; } }
 
     [SerializeField] private int armour;
-    public int Armour { get {  return armour; } }
+    public int Armour {get { return armour; }}
 
     [SerializeField] private float visualRange;
     public float VisualRange { get { return visualRange; } }
@@ -71,14 +71,29 @@ public class Unit : MonoBehaviour
     public NavMeshAgent NavAgent { get { return navAgent; } }
 
     [SerializeField] private Faction faction;
-    public Faction Faction { get { return faction;} set { faction = value; } }
+    public Faction Faction { get { return faction; } set { faction = value; } }
+
+    [SerializeField] private GameObject selectionVisual;
+    public GameObject SelectionVisual { get { return selectionVisual; } }
+    
+    [SerializeField] private UnitCost unitCost;
+    public UnitCost UnitCost { get { return unitCost; } }
+    //time for increasing progress 1% for this unit, less is faster
+    [SerializeField] private float unitWaitTime = 0.1f;
+    public float UnitWaitTime { get { return unitWaitTime; } }
+    [SerializeField] private bool isBuilder;
+    public bool IsBuilder { get { return isBuilder; } set { isBuilder = value; } }
+
+    [SerializeField] private Builder builder;
+    private Vector3 pos;
+
+    public Builder Builder { get { return builder; } }
     
     [SerializeField] private bool isWorker;
     public bool IsWorker { get { return isWorker; } set { isWorker = value; } }
 
     [SerializeField] private Worker worker;
     public Worker Worker { get { return worker; } }
-    
     [SerializeField]
     private float pathUpdateRate = 1.0f;
     public float PathUpdateRate { get { return pathUpdateRate; } }
@@ -86,21 +101,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private float lastPathUpdateTime;
     public float LastPathUpdateTime { get { return lastPathUpdateTime; } set { lastPathUpdateTime = value; } }
-    
-    
-
-    [SerializeField] private GameObject selectionVisual;
-    public GameObject SelectionVisual { get { return selectionVisual; } }
-    
-    [SerializeField] private bool isBuilder;
-    public bool IsBuilder { get { return isBuilder; } set { isBuilder = value; } }
-
-    [SerializeField] private Builder builder;
-    public Builder Builder { get { return builder; } }
-    
     [SerializeField]
     private Unit curEnemyUnitTarget;
-    
     [SerializeField]
     private Building curEnemyBuildingTarget;
 
@@ -109,65 +111,26 @@ public class Unit : MonoBehaviour
 
     [SerializeField]
     private float lastAttackTime;
-    
     [SerializeField] private float defendRange = 30f; //the range that a unit will defensively auto-attack
     public float DefendRange { get { return defendRange; } }
-    
-    
-    void Awake()
-    {
-        navAgent = GetComponent<NavMeshAgent>();
 
-        if (IsBuilder) 
-            builder = GetComponent<Builder>();
-        if (IsWorker)
-            worker = GetComponent<Worker>();
-        
-    }
-    
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        switch (state)
-        {
-            case UnitState.Move:
-                MoveUpdate();
-                break;
-            case UnitState.MoveToEnemy:
-                MoveToEnemyUpdate();
-                break;
-            case UnitState.AttackUnit:
-                AttackUpdate();
-                break;
-            case UnitState.MoveToEnemyBuilding:
-                MoveToEnemyBuildingUpdate();
-                break;
-            case UnitState.AttackBuilding:
-                AttackBuildingUpdate();
-                break;
-        }
-    }
-    
     public void ToggleSelectionVisual(bool flag)
     {
         if (selectionVisual != null)
-            selectionVisual.SetActive(flag);
+          selectionVisual.SetActive(flag);
     }
-
+    
     public void SetState(UnitState toState)
     {
         state = toState;
+
         if (state == UnitState.Idle)
         {
             navAgent.isStopped = true;
             navAgent.ResetPath();
         }
     }
-
+    
     public void MoveToPosition(Vector3 dest)
     {
         if (navAgent != null)
@@ -175,39 +138,30 @@ public class Unit : MonoBehaviour
             navAgent.SetDestination(dest);
             navAgent.isStopped = false;
         }
-        SetState(UnitState.Move);
-    }
 
+        SetState(UnitState.Move); 
+    }
+    
     private void MoveUpdate()
     {
         float distance = Vector3.Distance(transform.position, navAgent.destination);
-        if (distance <= 1f)
-        {
-            SetState(UnitState.Idle);
-        }
-    }
-    
-    [SerializeField] private UnitCost unitCost;
-    public UnitCost UnitCost { get { return unitCost; } }
 
-    //time for increasing progress 1% for this unit, less is faster
-    [SerializeField] private float unitWaitTime = 0.1f;
-    public float UnitWaitTime { get { return unitWaitTime; } }
-    
+        if (distance <= 1f)
+            SetState(UnitState.Idle);
+    }
+
     public void LookAt(Vector3 pos)
     {
         Vector3 dir = (pos - transform.position).normalized;
         float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-        
+
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
     }
-    
     protected virtual IEnumerator DestroyObject()
     {
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
-    
     // called when my health reaches zero
     protected virtual void Die()
     {
@@ -222,7 +176,6 @@ public class Unit : MonoBehaviour
         //Debug.Log(gameObject + " dies.");
         StartCoroutine("DestroyObject");
     }
-    
     // move to an enemy unit and attack them
     public void ToAttackUnit(Unit target)
     {
@@ -231,7 +184,6 @@ public class Unit : MonoBehaviour
         curEnemyUnitTarget = target;
         SetState(UnitState.MoveToEnemy);
     }
-    
     // called when an enemy unit attacks us
     public void TakeDamage(Unit enemy, int damage)
     {
@@ -250,26 +202,6 @@ public class Unit : MonoBehaviour
         if (!IsWorker) //if this unit is not worker
             ToAttackUnit(enemy); //always counter-attack
     }
-
-    // called when an enemy turret attacks us
-    public void TakeDamage(Turret turret, int damage)
-    {
-        //I'm already dead
-        if (curHP <= 0 || state == UnitState.Die)
-            return;
-
-        curHP -= damage;
-
-        if (curHP <= 0)
-        {
-            curHP = 0;
-            Die();
-        }
-
-        if (!IsWorker) //if this unit is not worker
-            ToAttackTurret(turret); //counter-attack at turret
-    }
-
     // called every frame the 'MoveToEnemy' state is active
     public void MoveToEnemyUpdate()
     {
@@ -291,7 +223,6 @@ public class Unit : MonoBehaviour
         if (Vector3.Distance(transform.position, curEnemyUnitTarget.transform.position) <= WeaponRange)
             SetState(UnitState.AttackUnit);
     }
-    
     // called every frame the 'Attack' state is active
     protected void AttackUpdate()
     {
@@ -324,23 +255,12 @@ public class Unit : MonoBehaviour
             //Debug.Log($"{unitName} - From Attack Update");
         }
     }
-    
     // move to an enemy building and attack them
     public void ToAttackBuilding(Building target)
     {
         curEnemyBuildingTarget = target;
         SetState(UnitState.MoveToEnemyBuilding);
     }
-
-    // move to an enemy turret and attack them
-    public void ToAttackTurret(Turret turret)
-    {
-        if (curHP <= 0 || state == UnitState.Die)
-            return;
-        curEnemyBuildingTarget = turret;
-        SetState(UnitState.MoveToEnemyBuilding);
-    }
-
     // called every frame the 'MoveToEnemyBuilding' state is active
     private void MoveToEnemyBuildingUpdate()
     {
@@ -356,13 +276,11 @@ public class Unit : MonoBehaviour
             navAgent.isStopped = false;
             navAgent.SetDestination(curEnemyBuildingTarget.transform.position);
         }
-
         if ((Vector3.Distance(transform.position, curEnemyBuildingTarget.transform.position) - 4f) <= WeaponRange)
         {
             SetState(UnitState.AttackBuilding);
         }
     }
-    
     // called every frame the 'AttackBuilding' state is active
     private void AttackBuildingUpdate()
     {
@@ -389,13 +307,72 @@ public class Unit : MonoBehaviour
 
             curEnemyBuildingTarget.TakeDamage(UnityEngine.Random.Range(minWpnDamage, maxWpnDamage + 1));
         }
-
         // if we're too far away, move towards the enemy's building
         if ((Vector3.Distance(transform.position, curEnemyBuildingTarget.transform.position) - 4f) > WeaponRange)
         {
             SetState(UnitState.MoveToEnemyBuilding);
         }
     }
+    // move to an enemy turret and attack them
+    public void ToAttackTurret(Turret turret)
+    {
+        if (curHP <= 0 || state == UnitState.Die)
+            return;
+        curEnemyBuildingTarget = turret;
+        SetState(UnitState.MoveToEnemyBuilding);
+    }
+    // called when an enemy turret attacks us
+    public void TakeDamage(Turret turret, int damage)
+    {
+        //I'm already dead
+        if (curHP <= 0 || state == UnitState.Die)
+            return;
+
+        curHP -= damage;
+
+        if (curHP <= 0)
+        {
+            curHP = 0;
+            Die();
+        }
+
+        if (!IsWorker) //if this unit is not worker
+            ToAttackTurret(turret); //counter-attack at turret
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        switch (state)
+        {
+            case UnitState.Move:
+                MoveUpdate();
+                break;
+            case UnitState.MoveToEnemy:
+                MoveToEnemyUpdate();
+                break;
+            case UnitState.AttackUnit:
+                AttackUpdate();
+                break;
+            case UnitState.MoveToEnemyBuilding:
+                 MoveToEnemyBuildingUpdate();
+                 break;
+            case UnitState.AttackBuilding:
+                 AttackBuildingUpdate();
+                 break;    
+        }
+    }
+    
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+        if (IsBuilder)
+            builder = GetComponent<Builder>();
+        if (IsWorker)
+            worker = GetComponent<Worker>();
+
+
+    }
+
 
     
     

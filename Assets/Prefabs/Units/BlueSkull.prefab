@@ -2948,7 +2948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   unitName: Fr. Regular
-  unitPic: {fileID: 85887920, guid: 75946305e4d9ba24b8840430a92534f9, type: 3}
+  unitPic: {fileID: 21300000, guid: 2aa1199c85cfe3643b0d455472ae70dd, type: 3}
   curHP: 100
   maxHP: 100
   moveSpeed: 5
