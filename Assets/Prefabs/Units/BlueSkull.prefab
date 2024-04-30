@@ -2959,24 +2959,24 @@ MonoBehaviour:
   weaponRange: 10
   state: 0
   faction: {fileID: 0}
+  selectionVisual: {fileID: 3535922816497883164}
+  unitCost:
+    food: 50
+    wood: 0
+    gold: 25
+    stone: 0
+  unitWaitTime: 0.1
+  isBuilder: 0
+  builder: {fileID: 0}
   isWorker: 0
   worker: {fileID: 0}
   pathUpdateRate: 1
   lastPathUpdateTime: 0
-  selectionVisual: {fileID: 3535922816497883164}
-  isBuilder: 0
-  builder: {fileID: 0}
   curEnemyUnitTarget: {fileID: 0}
   curEnemyBuildingTarget: {fileID: 0}
   attackRate: 1
   lastAttackTime: 0
   defendRange: 30
-  unitCost:
-    food: 50
-    wood: 20
-    gold: 10
-    stone: 0
-  unitWaitTime: 0.1
 --- !u!114 &585973363883203232
 MonoBehaviour:
   m_ObjectHideFlags: 0

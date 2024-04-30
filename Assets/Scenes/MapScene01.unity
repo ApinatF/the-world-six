@@ -8941,6 +8941,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 703865021}
     m_Modifications:
     - target: {fileID: -5166985362252314757, guid: 75d5fb38ebec8dd43a2618822c31fa56, type: 3}
+      propertyPath: gold
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -5166985362252314757, guid: 75d5fb38ebec8dd43a2618822c31fa56, type: 3}
       propertyPath: aliveUnits.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -10512,19 +10516,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 334309945350973366, guid: e52e5a572d74d734da0bd33abfb065d3, type: 3}
       propertyPath: food
-      value: 9999
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 334309945350973366, guid: e52e5a572d74d734da0bd33abfb065d3, type: 3}
       propertyPath: gold
-      value: 9999
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 334309945350973366, guid: e52e5a572d74d734da0bd33abfb065d3, type: 3}
       propertyPath: wood
-      value: 9999
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 334309945350973366, guid: e52e5a572d74d734da0bd33abfb065d3, type: 3}
       propertyPath: stone
-      value: 9999
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 334309945350973366, guid: e52e5a572d74d734da0bd33abfb065d3, type: 3}
       propertyPath: nation

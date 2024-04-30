@@ -155,8 +155,8 @@ MonoBehaviour:
   structureCost:
     food: 100
     wood: 50
-    gold: 3
-    stone: 3
+    gold: 50
+    stone: 50
   spawnPoint: {fileID: 2143236036456712858}
   rallyPoint: {fileID: 2080231421448403759}
   unitPrefabs:

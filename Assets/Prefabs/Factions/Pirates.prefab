@@ -48,15 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nation: 2
-  food: 0
-  wood: 0
-  gold: 0
-  stone: 0
+  food: 1000
+  wood: 600
+  gold: 500
+  stone: 600
   aliveUnits: []
   aliveBuildings: []
   unitsParent: {fileID: 4802096835964001290}
   buildingsParent: {fileID: 4833463272179283032}
   ghostBuildingParent: {fileID: 5746628080590316574}
+  startPosition: {fileID: 0}
+  newResourceRange: 50
+  buildingPrefabs: []
+  ghostBuildingPrefabs: []
+  unitPrefabs: []
 --- !u!1 &1912017009572958183
 GameObject:
   m_ObjectHideFlags: 0
