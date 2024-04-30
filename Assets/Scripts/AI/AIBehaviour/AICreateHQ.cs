@@ -117,9 +117,9 @@ public class AICreateHQ : AIBehaviour
                 Debug.Log("Pos corner= " + pos);
 
                 //Clamp pos to be in a map
-                /*pos = new Vector3(Mathf.Clamp(pos.x, Corner1PosX, Corner2PosX),
+                pos = new Vector3(Mathf.Clamp(pos.x, Corner1PosX, Corner2PosX),
                                     pos.y,
-                                    Mathf.Clamp(pos.z, Corner1PosZ, Corner2PosZ));*/ //ได้ไง
+                                    Mathf.Clamp(pos.z, Corner1PosZ, Corner2PosZ));
                 
                 Debug.Log("Pos Mathf.Clamp 2 = " + pos);
 
